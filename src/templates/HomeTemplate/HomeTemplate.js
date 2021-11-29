@@ -1,5 +1,8 @@
 import { Fragment } from "react";
 import { Route } from "react-router";
+import Footer from "./Layout/Footer/Footer";
+import Header from "./Layout/Header/Header";
+import HomeCarousel from "./Layout/HomeCarousel/HomeCarousel";
 
 export const HomeTemplate = (props) => {
   // path,  exact , Component
@@ -13,11 +16,14 @@ export const HomeTemplate = (props) => {
         //props.location, props.history, props.match
         return (
           <Fragment>
-            <h1 className="bg-black h-10 text-white">đây là header homepage</h1>
+            <Header {...propsRoute} />
+
+            <HomeCarousel {...propsRoute} />
+
             <Component {...propsRoute} />
-            <footer className="bg-black h-10 text-white">
-              đây là footer homepage
-            </footer>
+
+            <hr className="mt-5" />
+            <Footer />
           </Fragment>
         );
       }}
